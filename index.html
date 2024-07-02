@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tickethack</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="container">
+      <div id="header-left">
+        <h1 class="logo">Tickethack</h1>
+      </div>
+      <div id="header-right">
+        <a href="url" id="btn-cart" class="menu">Cart</a>
+        <a href="url" id="btn-bookings" class="menu">Bookings</a>
+      </div>
+      <div id="content">
+        <h1>Explore the world effortlessly by train!</h1>
+        <h5>
+          Compare, book and enjoy cheap prices for train tickets: your journey
+          starts on Tickethack
+        </h5>
+        <div id="bottom">
+          <div id="tripSearch">
+            <input
+              id="trip-departure"
+              class="input"
+              type="text"
+              placeholder="Departure"
+            />
+            <input
+              id="trip-arrival"
+              class="input"
+              type="text"
+              placeholder="Arrival"
+            />
+            <input
+              id="trip-date"
+              class="input"
+              type="date"
+              placeholder="23/06/2022"
+            />
+            <button type="button" id="btn-search">Search</button>
+          </div>
+          <div id="tripResults">
+            <img src="./images/train.png" id="train-logo" alt="" />
+            <p>It's time to book your future trip.</p>
+            <div id="tripInfo"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
