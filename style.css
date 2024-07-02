@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  /* border: solid green; */
+  border: solid green;
 }
 
 #container {
@@ -9,7 +9,7 @@ body {
   display: grid;
   grid-template-rows: repeat(14, 1fr);
   grid-template-columns: repeat(14, 1fr);
-  /* border: solid blue;  */
+  border: solid blue;
 }
 
 #header-left {
@@ -34,12 +34,12 @@ body {
   justify-content: flex-end;
   align-content: center;
   background-color: white;
-  /* border: solid red; */
+  border: solid red;
   padding-right: 15px;
   padding-top: 14px;
 }
 
-#content {
+#content-homepage {
   background-image: url("./images/background.jpg");
   background-position: center;
   background-size: cover;
@@ -54,9 +54,38 @@ body {
   justify-content: flex-start;
 }
 
-#bottom {
+#bottom-homepage {
   display: flex;
   flex-direction: row;
+}
+
+#content-cart {
+  background-color: #eff2f1;
+  width: 100vw;
+  grid-row-start: 2;
+  grid-row-end: 14;
+  grid-column-start: 1;
+  grid-column-end: 14;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid orange;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+#cart-container {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: solid red;
+  border-radius: 10px;
 }
 
 #tripSearch {
@@ -82,7 +111,7 @@ body {
   padding-right: 25px;
   padding-top: 30px;
   padding-bottom: 10px;
-  margin-right: 200px;
+  margin-right: 100px;
   margin-left: 50px;
   margin-top: 120px;
   margin-bottom: 140px;
@@ -90,6 +119,41 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  overflow: scroll;
+}
+
+.tripContainer {
+  background-color: #eff2f1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 5px;
+}
+
+.cart-tripContainer {
+  background-color: #eff2f1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  border: solid green;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#total-footer {
+  /* background-color: #01163e; */
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: center;
+  border: solid green;
 }
 
 .logo {
@@ -149,6 +213,24 @@ h5 {
   align-items: center;
 }
 
+#btn-book {
+  background-color: #469e85;
+  height: 30px;
+  width: 50px;
+  font-size: 12px;
+  color: #ffffff;
+  border-radius: 10px;
+  border: 2px #eff2f1 solid;
+}
+
+#btn-purchase {
+  background-color: #469e85;
+  height: 30px;
+  width: 100px;
+  border-radius: 10px;
+  border: 2px #469e85 solid;
+}
+
 #train-logo {
   width: 120px;
   margin-bottom: 50px;
@@ -158,4 +240,10 @@ p {
   font-family: "Open Sans", sans-serif;
   color: black;
   font-size: 12px;
+  padding: 5px;
+}
+
+.cart-info {
+  padding-left: 100px;
+  padding-right: 100px;
 }
