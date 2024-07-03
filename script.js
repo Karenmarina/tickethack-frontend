@@ -22,12 +22,13 @@ document.querySelector("#btn-search").addEventListener("click", function () {
         for (let i = 0; i < data.allTrips.length; i++) {
           //   console.log(data.allTrips[1]);
           //   console.log(data.allTrips[0][i].departure);
-
+          const formattedTime = moment(data.allTrips[i].date).format("HH:MM");
+          console.log(formattedTime);
           document.querySelector("#tripResults").innerHTML += `
           <div class="tripContainer">
             <p><span id="departure">${data.allTrips[i].departure}</span>><span id="arrival">${data.allTrips[i].arrival}</span>
             </p>
-            <p id="date">${data.allTrips[i].date}</p>
+            <p id="date">${formattedTime}</p>
             <p id="price">${data.allTrips[i].price}€</p>
             <button type="button" id="btn-book">Book</button>
             </div>`;
