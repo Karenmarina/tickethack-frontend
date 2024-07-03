@@ -4,7 +4,7 @@ document.querySelector("#btn-search").addEventListener("click", function () {
   const departure = document.querySelector("#trip-departure").value;
   const arrival = document.querySelector("#trip-arrival").value;
   const date = document.querySelector("#trip-date").value;
-  console.log(departure, arrival, date);
+  //   console.log({ departure, arrival, date });
 
   //fetch list of results with input values in body
   fetch("http://localhost:3000/trips", {
@@ -14,15 +14,21 @@ document.querySelector("#btn-search").addEventListener("click", function () {
   })
     .then((response) => response.json())
     .then((data) => {
+      console.log(data.allTrips);
       if (data.result) {
         // add trip results in HTML
-        for (let i = 0; i < data.allTrips[0].length; i++) {
-          document.querySelector("#tripResults").innerHTML = `
+        document.querySelector("#homepage-train").remove();
+
+        for (let i = 0; i < data.allTrips.length; i++) {
+          //   console.log(data.allTrips[1]);
+          //   console.log(data.allTrips[0][i].departure);
+
+          document.querySelector("#tripResults").innerHTML += `
           <div class="tripContainer">
-            <p><span id="departure">${departure}</span>><span id="arrival">${arrival}</span>
+            <p><span id="departure">${data.allTrips[i].departure}</span>><span id="arrival">${data.allTrips[i].arrival}</span>
             </p>
-            <p id="date">${date}</p>
-            <p id="price">${price}€</p>
+            <p id="date">${data.allTrips[i].date}</p>
+            <p id="price">${data.allTrips[i].price}€</p>
             <button type="button" id="btn-book">Book</button>
             </div>`;
         }
@@ -35,6 +41,7 @@ document.querySelector("#btn-search").addEventListener("click", function () {
 });
 
 // add a trip to the cart on-click Book
+// CODE PAS PROPRE A REPRENDRE !!!
 for (let i = 0; i < document.querySelectorAll(".btn-book").length; i++) {
   document
     .querySelectorAll("#btn-book")
